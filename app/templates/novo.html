@@ -1,0 +1,63 @@
+<p>Adicionar nova Pessoa</p>
+
+<form class="form-horizontal" ng-submit="adicionar(item)">
+  <div class="form-group">
+    <label for="nome" class="col-sm-2 control-label"> Nome.: </label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        ng-model="item.nome"
+        required="required"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label"> Telefone.: </label>
+    <div class="col-sm-5">
+      <input
+        type="tel"
+        name="telefone"
+        id="telefone"
+        ng-model="item.telefone"
+        required="required"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label"> Operadora.: </label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        name="idoperadora"
+        id="idoperadora"
+        ng-model="item.idoperadora"
+        required="required"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label"> Cor.: </label>
+    <div class="col-sm-5">
+      <input
+        type="text"
+        name="cor"
+        id="cor"
+        ng-model="item.cor"
+        required="required"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <br />
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <a href="#!/" class="btn btn-default">Voltar</a>
+    </div>
+  </div>
+</form>

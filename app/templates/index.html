@@ -1,0 +1,25 @@
+<div ng-init="load()">
+  <p>Listagem</p>
+  <a href="#!/novo" class="btn btn-default">Novo</a>
+  <table class="table table">
+    <thead>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Operadora</th>
+      <th>Ação</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="registro in registros">
+        <td>{{registro.id}}</td>
+        <td>{{registro.nome}}</td>
+        <td>{{registro.telefone}}</td>
+        <td>{{registro.operadora}}</td>
+        <td>
+          <a href="#!/editar/{{registro.id}}" class="btn btn-primary btn-xs">Editar</a>
+          <a href="#!/" ng-click="deletar(registro.id)" class="btn btn-danger btn-xs">Deletar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
