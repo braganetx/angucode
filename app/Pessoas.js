@@ -5,13 +5,13 @@ pessoas.config([
 	function ($routeProvider) {
 		$routeProvider
 			.when("/", {
-				templateUrl: "app/templates/index.html",
+				templateUrl: "templates/index.html",
 			})
 			.when("/novo", {
-				templateUrl: "app/templates/novo.html",
+				templateUrl: "templates/novo.html",
 			})
 			.when("/editar/:id", {
-				templateUrl: "app/templates/editar.html",
+				templateUrl: "templates/editar.html",
 			});
 	},
 ]);
