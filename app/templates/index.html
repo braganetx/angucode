@@ -7,6 +7,7 @@
       <th>Nome</th>
       <th>Telefone</th>
       <th>Operadora</th>
+      <th>Cor</th>
       <th>Ação</th>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <td>{{registro.nome}}</td>
         <td>{{registro.telefone}}</td>
         <td>{{registro.operadora}}</td>
+        <td>{{registro.cor}}</td>
         <td>
           <a href="#!/editar/{{registro.id_contato}}" class="btn btn-primary btn-xs">Editar</a>
           <a href="#!/" ng-click="deletar(registro.id_contato)" class="btn btn-danger btn-xs">Deletar</a>

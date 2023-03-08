@@ -15,7 +15,8 @@ class Contato_model extends CI_Model
 
         $this->db->select('*')
             ->from($this->table_name)
-            ->join('operadoras', $this->table_name . '.idoperadora = operadoras.id_operadora');
+            ->join('operadoras', $this->table_name . '.idoperadora = operadoras.id_operadora')
+            ->join('cores', $this->table_name . '.id_cor = cores.id_cor');
         if ($id == null) {
             $data = $this->db->get()->result();
         } else {
@@ -33,7 +34,7 @@ class Contato_model extends CI_Model
             'nome' => $data->nome,
             'telefone' => $data->telefone,
             'idoperadora' => intval($data->idoperadora),
-            'cor' => intval($data->cor)
+            'id_cor' => intval($data->id_cor)
         );
 
         if ($this->db->insert($this->table_name, $data)) {
@@ -49,7 +50,7 @@ class Contato_model extends CI_Model
             'nome' => $updata->nome,
             'telefone' => $updata->telefone,
             'idoperadora' => intval($updata->idoperadora),
-            'cor' => intval($updata->cor)
+            'id_cor' => intval($updata->id_cor)
         );
 
         if ($this->db->update(

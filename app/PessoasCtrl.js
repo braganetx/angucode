@@ -16,6 +16,14 @@ pessoas.controller("PessoasCtrl", [
 			$scope.item = PessoasSrv.get({ id: $routeParams.id });
 		};
 
+		$scope.getCores = function () {
+			$scope.operadoras = PessoasSrv.getCores({ id: $routeParams.id });
+		};
+
+		$scope.getOperadoras = function () {
+			$scope.operadoras = PessoasSrv.getoperadoras({ id: $routeParams.id });
+		};
+
 		$scope.adicionar = function (item) {
 			var postdata = JSON.stringify(item, null, 2);
 			$scope.result = PessoasSrv.insert(
@@ -33,6 +41,7 @@ pessoas.controller("PessoasCtrl", [
 
 		$scope.editar = function (item) {
 			var postdata = JSON.stringify(item, null, 2);
+
 			$scope.result = PessoasSrv.update(
 				{ id: $routeParams.id },
 				postdata,

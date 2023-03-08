@@ -37,11 +37,7 @@
 				class="form-control"
 				id=""
 			>
-				<option value="" selected>Operadora</option>
-				<option value="1">Vivo</option>
-				<option value="2">Claro</option>
-				<option value="3">Tim</option>
-				<option value="4">Oi</option>
+				<option value="{{item.id_cor}}">{{item.cor}}</option>
 			</select>
 		</div>
     </div>
@@ -52,7 +48,7 @@
 			<select
 				name="cor"
 				id="cor"
-				ng-model="item.cor"
+				ng-model="item.id_cor"
 				required="required"
 				class="form-control"
 				id=""

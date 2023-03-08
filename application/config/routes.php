@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -53,9 +53,32 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/**
+ * @var array
+ * Pessoas routes
+ */
 $route['contato'] = '/contato/index';
 $route['contato/(:num)']['GET'] = '/contato/index/$1';
-
 $route['contato/create']['POST'] = '/contato/create';
 $route['contato/update/(:num)']['PUT'] = 'contato/update/$1';
 $route['contato/delete/(:num)']['DELETE'] = 'contato/delete/$1';
+
+/**
+ * @var array
+ * Operadoras routes
+ */
+$route['operadora'] = '/operadora/index';
+$route['operadora/(:num)']['GET'] = '/operadora/index/$1';
+$route['operadora/create']['POST'] = '/operadora/create';
+$route['operadora/update/(:num)']['PUT'] = 'operadora/update/$1';
+$route['operadora/delete/(:num)']['DELETE'] = 'operadora/delete/$1';
+
+/**cores
+ * @var array
+ * Cores routes
+ */
+$route['cores'] = '/cores/index';
+$route['cores/(:num)']['GET'] = '/cores/index/$1';
+$route['cores/create']['POST'] = '/cores/create';
+$route['cores/update/(:num)']['PUT'] = 'cores/update/$1';
+$route['cores/delete/(:num)']['DELETE'] = 'cores/delete/$1';
