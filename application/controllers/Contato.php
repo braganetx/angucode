@@ -17,7 +17,6 @@ class Contato extends CI_Controller
     {
         $data = '';
 
-
         if (is_numeric($id)) {
             $data = $this->contato_model->get($id);
         } else {

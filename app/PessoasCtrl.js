@@ -9,7 +9,7 @@ pessoas.controller("PessoasCtrl", [
 		};
 
 		$scope.clear = function () {
-			$scope.item = "";
+			$scope.item = {};
 		};
 
 		$scope.get = function () {
