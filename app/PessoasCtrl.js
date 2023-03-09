@@ -1,11 +1,22 @@
 pessoas.controller("PessoasCtrl", [
 	"$scope",
 	"PessoasSrv",
+	"OperadoraSrv",
+	"CoresSrv",
 	"$location",
 	"$routeParams",
-	function ($scope, PessoasSrv, $location, $routeParams) {
+	function (
+		$scope,
+		PessoasSrv,
+		OperadoraSrv,
+		CoresSrv,
+		$location,
+		$routeParams
+	) {
 		$scope.load = function () {
 			$scope.registros = PessoasSrv.query();
+			$scope.operadoras = OperadoraSrv.query();
+			$scope.cores = CoresSrv.query();
 		};
 
 		$scope.clear = function () {
@@ -14,14 +25,16 @@ pessoas.controller("PessoasCtrl", [
 
 		$scope.get = function () {
 			$scope.item = PessoasSrv.get({ id: $routeParams.id });
+			$scope.operadoras = OperadoraSrv.query();
+			$scope.cores = CoresSrv.query();
 		};
 
 		$scope.getCores = function () {
-			$scope.operadoras = PessoasSrv.getCores({ id: $routeParams.id });
+			$scope.cores = CoresSrv.getCores({ id: $routeParams.id });
 		};
 
 		$scope.getOperadoras = function () {
-			$scope.operadoras = PessoasSrv.getoperadoras({ id: $routeParams.id });
+			$scope.operadoras = OperadoraSrv.getoperadoras({ id: $routeParams.id });
 		};
 
 		$scope.adicionar = function (item) {

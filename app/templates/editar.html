@@ -1,5 +1,5 @@
 <p>Editar Pessoa</p>
-<form class="form-horizontal" ng-submit="editar(item)" ng-init="get()">
+<form class="form-horizontal" ng-controller="PessoasCtrl" ng-submit="editar(item)" ng-init="get()">
   <div class="form-group">
     <label for="nome" class="col-sm-2 control-label"> Nome.: </label>
     <div class="col-sm-5">
@@ -37,7 +37,13 @@
 				class="form-control"
 				id=""
 			>
-				<option value="{{item.id_cor}}">{{item.cor}}</option>
+      <option value="" selected>Selecione a operadora</option>
+      <option
+        ng-repeat="operadora in operadoras"
+        value="{{operadora.id_operadora}}"
+      >
+        {{operadora.operadora}}
+      </option>
 			</select>
 		</div>
     </div>
@@ -53,11 +59,10 @@
 				class="form-control"
 				id=""
 			>
-				<option value="" selected>Cor</option>
-				<option value="1">Vermelho</option>
-				<option value="2">Preto</option>
-				<option value="3">Verde</option>
-				<option value="4">Azul</option>
+      <option value="" selected>Selecione a cor</option>
+      <option ng-repeat="cor in cores" value="{{cor.id_cor}}">
+        {{cor.cor}}
+      </option>
 			</select>
 		</div>
 	</div>

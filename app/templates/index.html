@@ -1,27 +1,41 @@
 <div ng-init="load()">
-  <p>Listagem</p>
-  <a href="#!/novo" class="btn btn-default">Novo</a>
-  <table class="table table">
-    <thead>
-      <th>#</th>
-      <th>Nome</th>
-      <th>Telefone</th>
-      <th>Operadora</th>
-      <th>Cor</th>
-      <th>Ação</th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="registro in registros">
-        <td>{{registro.id_contato}}</td>
-        <td>{{registro.nome}}</td>
-        <td>{{registro.telefone}}</td>
-        <td>{{registro.operadora}}</td>
-        <td>{{registro.cor}}</td>
-        <td>
-          <a href="#!/editar/{{registro.id_contato}}" class="btn btn-primary btn-xs">Editar</a>
-          <a href="#!/" ng-click="deletar(registro.id_contato)" class="btn btn-danger btn-xs">Deletar</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+	<p>Listagem</p>
+	<a href="#!/novo" class="btn btn-default">Novo</a>
+	<table class="table table">
+		<thead>
+			<th>#</th>
+			<th>Nome</th>
+			<th>Telefone</th>
+			<th>Operadora</th>
+			<th>Cor</th>
+			<th>Ação</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="registro in registros">
+				<td>{{registro.id_contato}}</td>
+				<td>{{registro.nome}}</td>
+				<td>{{registro.telefone}}</td>
+				<td>{{registro.operadora}}</td>
+				<td>
+					<div
+						style="width: 20px; height: 20px"
+						ng-style="{'background-color': registro.hex}"
+					></div>
+				</td>
+				<td>
+					<a
+						href="#!/editar/{{registro.id_contato}}"
+						class="btn btn-primary btn-xs"
+						>Editar</a
+					>
+					<a
+						href="#!/"
+						ng-click="deletar(registro.id_contato)"
+						class="btn btn-danger btn-xs"
+						>Deletar</a
+					>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
