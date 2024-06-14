@@ -14,9 +14,11 @@ pessoas.controller("PessoasCtrl", [
 		$routeParams
 	) {
 		$scope.load = function () {
-			$scope.registros = PessoasSrv.query();
-			$scope.operadoras = OperadoraSrv.query();
-			$scope.cores = CoresSrv.query();
+			$scope.registros = [
+				($scope.pessoas = PessoasSrv.query()),
+				($scope.operadoras = OperadoraSrv.query()),
+				($scope.cores = CoresSrv.query()),
+			];
 		};
 
 		$scope.clear = function () {

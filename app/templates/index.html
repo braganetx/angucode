@@ -12,25 +12,25 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="registro in registros">
-				<td>{{registro.id_contato}}</td>
-				<td>{{registro.nome}}</td>
-				<td>{{registro.telefone}}</td>
-				<td>{{registro.operadora}}</td>
+				<td>{{pessoas[$index].id_contato}}</td>
+				<td>{{pessoas[$index].nome}}</td>
+				<td>{{pessoas[$index].telefone}}</td>
+				<td>{{operadoras[$index].operadora}}</td>
 				<td>
 					<div
 						style="width: 20px; height: 20px"
-						ng-style="{'background-color': registro.hex}"
+						ng-style="{'background-color': cores[$index].hex}"
 					></div>
 				</td>
 				<td>
 					<a
-						href="#!/editar/{{registro.id_contato}}"
+						href="#!/editar/{{pessoas[$index].id_contato}}"
 						class="btn btn-primary btn-xs"
 						>Editar</a
 					>
 					<a
 						href="#!/"
-						ng-click="deletar(registro.id_contato)"
+						ng-click="deletar(pessoas[$index].id_contato)"
 						class="btn btn-danger btn-xs"
 						>Deletar</a
 					>
